@@ -4,6 +4,6 @@ from BaseApp.UserApp import schemas
 api = APIRouter()
 
 
-@api.get("/")
+@api.get("/index")
 def index():
     return {"key": "value"}
