@@ -10,7 +10,7 @@ I am using uvicorn server to run app
 
 `uvicorn BaseApp.manager:app --reload`
 
-Database migrations using alembic.
+## Database migrations using alembic.
 
 ### Initialize alembic 
 **db-migration** is folder name
@@ -21,7 +21,7 @@ Database migrations using alembic.
 Edit env.py file and change according to this repo env.py file.
 In this change Database url with environment variable and configure into mehod of run_migrations_offline and run_migrations_online.
 
-### Change database url in **alembic.ini** file also
+Change database url in **alembic.ini** file also
 
 ### Auto generate migration script
 import project app models all
