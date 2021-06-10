@@ -1,13 +1,11 @@
 from pydantic import BaseModel
-from typing import Optional
-import datetime
-from fastapi import Body
 
 
-class User(BaseModel):
+class UserCreateSchema(BaseModel):
+    first_name: str
+    last_name: str
     username: str
-
-
-class UserCreate(User):
-    password: str
     email: str
+    password: str
+
+
