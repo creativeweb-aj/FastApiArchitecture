@@ -9,7 +9,11 @@ from BaseApp.UserApp import models, router
 UserApp.models.Base.metadata.create_all(bind=engine)
 
 # FastApi Object
-app = FastAPI()
+app = FastAPI(
+    title="FastApi Testing",
+    description="This is tutorial of use fastapi with user app",
+    version="0.0.1",
+)
 
 # Include Apps to main fast app
 app.include_router(UserApp.router.api, prefix="/users")
