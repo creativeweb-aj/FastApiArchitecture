@@ -16,13 +16,9 @@ class UserResponse(BaseModel):
     last_name: str
     username: str
     email: str
-    password: str
     is_active: bool
-    is_verify: bool
-    is_delete: bool
-    created_on: str
     updated_on: str
 
-
-class UserList(BaseModel):
-    data: List = UserResponse
+    # It's required for orm db config to send db data
+    class Config:
+        orm_mode = True
