@@ -1,9 +1,11 @@
 from sqlalchemy import Boolean, Column, Integer, String
+# Import Base variable of database from database
 from BaseApp.database import Base
 
 
 # Create database models
 
+# User model
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True)

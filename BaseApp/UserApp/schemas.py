@@ -1,7 +1,7 @@
-from typing import List
 from pydantic import BaseModel
 
 
+# User create schema
 class UserCreateSchema(BaseModel):
     first_name: str
     last_name: str
@@ -10,6 +10,7 @@ class UserCreateSchema(BaseModel):
     password: str
 
 
+# User response schema
 class UserResponse(BaseModel):
     id: int
     first_name: str
@@ -19,6 +20,6 @@ class UserResponse(BaseModel):
     is_active: bool
     updated_on: str
 
-    # It's required for orm db config to send db data
+    # Required for ORM based response data to enable ORM mode
     class Config:
         orm_mode = True
