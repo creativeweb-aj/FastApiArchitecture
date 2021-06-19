@@ -4,14 +4,15 @@ from fastapi import FastAPI
 from BaseApp.database import engine
 # Import Apps module
 from BaseApp import UserApp
-from BaseApp import BlogApp
+from BaseApp import ProductApp
 # Import models and router from App
 from BaseApp.UserApp import models, router
-from BaseApp.BlogApp import models, router
+from BaseApp.ProductApp import models, router
 
+# No need to add or bind to database engine to our models here alembic do this
 # Binding Apps models to database engine
 # UserApp.models.Base.metadata.create_all(bind=engine)
-# BlogApp.models.Base.metadata.create_all(bind=engine)
+# ProductApp.models.Base.metadata.create_all(bind=engine)
 
 # FastApi Instance
 app = FastAPI(
@@ -22,8 +23,6 @@ app = FastAPI(
 
 # Include App to FastApi Instance
 app.include_router(UserApp.router.api, prefix="/auth")
-app.include_router(BlogApp.router.api, prefix="/blog")
+app.include_router(ProductApp.router.api, prefix="/product")
 
-# Run FastApi to main
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+

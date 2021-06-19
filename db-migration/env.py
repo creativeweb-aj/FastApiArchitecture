@@ -21,6 +21,7 @@ sys.path.append(base_dir)
 
 # This helps alembic auto generation
 from BaseApp.UserApp.models import *
+from BaseApp.ProductApp.models import *
 from BaseApp.database import Base
 
 target_metadata = Base.metadata
