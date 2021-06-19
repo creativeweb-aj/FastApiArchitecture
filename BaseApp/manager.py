@@ -21,7 +21,7 @@ app = FastAPI(
 )
 
 # Include App to FastApi Instance
-app.include_router(UserApp.router.api, prefix="/user")
+app.include_router(UserApp.router.api, prefix="/auth")
 app.include_router(BlogApp.router.api, prefix="/blog")
 
 # Run FastApi to main
