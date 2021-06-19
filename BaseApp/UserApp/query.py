@@ -5,7 +5,19 @@ import datetime
 
 
 # Get all user method query
-def getUser(db):
+def getUser(data, db):
+    return db.query(User).filter_by(username=data, is_delete=False).first()
+
+
+def getUserByUsername(data, db):
+    return db.query(User).filter_by(username=data.username, is_delete=False).first()
+
+
+def getUserByEmail(data, db):
+    return db.query(User).filter_by(email=data.email, is_delete=False).first()
+
+
+def getAllUsers(db):
     return db.query(User).all()
 
 
@@ -26,3 +38,12 @@ def createUser(data, db):
     db.add(userObj)
     db.commit()
     return userObj
+
+
+def authenticateUser(data, db):
+    user = getUserByUsername(data, db)
+    if not user:
+        return False
+    if not encrypt.verify_password(data.password, user.password):
+        return False
+    return True
