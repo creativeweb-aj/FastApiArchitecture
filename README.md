@@ -5,6 +5,9 @@ Create virtual environment then activate to install requirements libraries from 
 
 Project is set up in BaseApp folder. In this manager.py file have app configurations.
 
+To run and configure with your local details only change in .env file.
+For database migration we need to change same url of database in .env and also in alembic.ini file.
+
 ### Run FastApi Server
 I am using uvicorn server to run app
 
