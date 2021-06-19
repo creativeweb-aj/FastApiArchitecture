@@ -1,4 +1,4 @@
-# FastApiArchitecture
+# Fast Api Architecture
  FastApi Project Architecture with database and alembic tools
 
 Create virtual environment then activate to install requirements libraries from requirements.txt
