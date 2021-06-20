@@ -1,9 +1,7 @@
-import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-# Import sql engine from database
-from BaseApp.database import engine
+
 # Import Apps module
 from BaseApp import UserApp
 from BaseApp import ProductApp
@@ -11,10 +9,6 @@ from BaseApp import ProductApp
 from BaseApp.UserApp import models, router
 from BaseApp.ProductApp import models, router
 
-# No need to add or bind to database engine to our models here alembic do this
-# Binding Apps models to database engine
-# UserApp.models.Base.metadata.create_all(bind=engine)
-# ProductApp.models.Base.metadata.create_all(bind=engine)
 
 # FastApi Instance
 app = FastAPI(
