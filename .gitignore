@@ -94,7 +94,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-data/
+data/db/
 
 
 # Spyder project settings
