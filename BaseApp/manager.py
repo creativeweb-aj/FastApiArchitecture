@@ -33,7 +33,7 @@ app.add_middleware(
 )
 
 # Static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Include App to FastApi Instance
 app.include_router(UserApp.router.api, prefix="/auth")
