@@ -13,6 +13,22 @@ I am using uvicorn server to run app
 
 `uvicorn BaseApp.manager:app --reload`
 
+### Docker run FastApi Server
+To run docker container
+
+`docker compose up`
+
+After docker app and database container started migrate our models to docker container database
+
+Start app container shell
+
+`docker exec -i <Container-ID> sh`
+
+Execute alembic migration command
+
+`alembic upgrade head`
+
+
 ## Database migrations using alembic.
 
 ### Initialize alembic 
